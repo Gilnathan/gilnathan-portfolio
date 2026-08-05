@@ -83,80 +83,102 @@ export function EducationAndCertifications() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.section
-      className="educationArea"
-      id="formacao"
-      aria-labelledby="education-title"
-      initial={shouldReduceMotion ? { opacity: 1 } : "hidden"}
-      whileInView={shouldReduceMotion ? { opacity: 1 } : "visible"}
-      viewport={{ once: true, amount: 0.25 }}
-      variants={shouldReduceMotion ? undefined : motionProps}
-      transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <div>
-        <h3 className="sectionKicker" id="education-title">
-          FORMAÇÃO
-        </h3>
-        <article className="educationCard">
-          <div className="educationHeader">
-            <span className="educationIcon" aria-hidden="true">
-              <GraduationCap size={20} strokeWidth={1.8} />
-            </span>
-            <div className="educationHeading">
-              <h3>Análise e Desenvolvimento de Sistemas</h3>
-              <p>Estácio</p>
-              <span>2023 — Em andamento</span>
-            </div>
-          </div>
-          <p className="educationDescription">
-            Graduação focada em desenvolvimento de software, arquitetura de sistemas, banco de dados e engenharia de
-            software.
-          </p>
-          <ul className="educationHighlights" aria-label="Disciplinas em destaque">
-            {educationHighlights.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </article>
-      </div>
-
-      <section className="certificationsArea" id="certificacoes" aria-labelledby="certifications-title">
-        <h3 className="sectionKicker" id="certifications-title">
-          CERTIFICAÇÕES
-        </h3>
-        <motion.ul className="certificationsGrid" layout={shouldReduceMotion ? false : true}>
-          {certifications.map((certification) => (
-            <motion.li
-              className="certificationCard"
-              key={certification.id}
-              layout={shouldReduceMotion ? false : true}
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
-              animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.22, ease: "easeOut" }}
-            >
-              <article className="certificationContent">
-                <h4>{certification.title}</h4>
-                <p>
-                  <span className="certificationDate">{certification.date}</span>
-                  <span aria-hidden="true"> · </span>
-                  <span className="certificationInstitution">{certification.institution}</span>
+    <>
+      <motion.section
+        className="educationSection"
+        id="formacao"
+        aria-labelledby="education-title"
+        initial={shouldReduceMotion ? { opacity: 1 } : "hidden"}
+        whileInView={shouldReduceMotion ? { opacity: 1 } : "visible"}
+        viewport={{ once: true, amount: 0.25 }}
+        variants={shouldReduceMotion ? undefined : motionProps}
+        transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="container">
+          <div className="educationArea">
+            <h3 className="sectionKicker" id="education-title">
+              FORMAÇÃO
+            </h3>
+            <article className="educationCard">
+              <span className="educationIcon" aria-hidden="true">
+                <GraduationCap size={20} strokeWidth={1.8} />
+              </span>
+              <div className="educationContent">
+                <div className="educationHeader">
+                  <h3>Análise e Desenvolvimento de Sistemas</h3>
+                  <p className="educationMeta">
+                    <span>Estácio</span>
+                    <span aria-hidden="true">·</span>
+                    <span>2023 — Em andamento</span>
+                  </p>
+                </div>
+                <p className="educationDescription">
+                  Graduação focada em desenvolvimento de software, arquitetura de sistemas, banco de dados e engenharia de
+                  software.
                 </p>
-              </article>
-              <a
-                className="certificateLink"
-                href={certification.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Abrir certificado de ${certification.title}`}
-                title={`Abrir certificado de ${certification.title}`}
-              >
-                <ExternalLink size={14} aria-hidden="true" />
-              </a>
-            </motion.li>
-          ))}
-        </motion.ul>
-      </section>
-    </motion.section>
+                <ul className="educationTags" aria-label="Disciplinas em destaque">
+                  {educationHighlights.map((item) => (
+                    <li className="educationTag" key={item}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="certificationsSection"
+        id="certificacoes"
+        aria-labelledby="certifications-title"
+        initial={shouldReduceMotion ? { opacity: 1 } : "hidden"}
+        whileInView={shouldReduceMotion ? { opacity: 1 } : "visible"}
+        viewport={{ once: true, amount: 0.25 }}
+        variants={shouldReduceMotion ? undefined : motionProps}
+        transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="container">
+          <section className="certificationsArea" aria-labelledby="certifications-title">
+            <h3 className="sectionKicker" id="certifications-title">
+              CERTIFICAÇÕES
+            </h3>
+            <motion.ul className="certificationsGrid" layout={shouldReduceMotion ? false : true}>
+              {certifications.map((certification) => (
+                <motion.li
+                  className="certificationCard"
+                  key={certification.id}
+                  layout={shouldReduceMotion ? false : true}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
+                  animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.22, ease: "easeOut" }}
+                >
+                  <article className="certificationContent">
+                    <h4 className="certificationTitle">{certification.title}</h4>
+                    <p>
+                      <span className="certificationDate">{certification.date}</span>
+                      <span aria-hidden="true"> · </span>
+                      <span className="certificationInstitution">{certification.institution}</span>
+                    </p>
+                  </article>
+                  <a
+                    className="certificateLink"
+                    href={certification.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Abrir certificado de ${certification.title}`}
+                    title={`Abrir certificado de ${certification.title}`}
+                  >
+                    <ExternalLink size={14} aria-hidden="true" />
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </section>
+        </div>
+      </motion.section>
+    </>
   );
 }
 
