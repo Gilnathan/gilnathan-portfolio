@@ -368,33 +368,194 @@ main {
   margin: 0;
 }
 
-.specialties {
+.educationArea {
+  display: grid;
+  gap: 28px;
   margin-top: 34px;
 }
 
-.specialtyGrid {
+.educationCard {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.educationCard:hover {
+  border-color: rgba(255, 98, 79, 0.3);
+  transform: translateY(-2px);
+}
+
+.educationHeader {
+  align-items: flex-start;
   display: grid;
-  gap: 12px;
+  gap: 14px;
+  grid-template-columns: 40px minmax(0, 1fr);
+}
+
+.educationIcon {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: var(--coral);
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.educationHeading {
+  min-width: 0;
+}
+
+.educationHeading h3 {
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+
+.educationHeading p {
+  color: rgba(246, 242, 234, 0.76);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 4px;
+}
+
+.educationHeading span {
+  color: var(--muted);
+  display: inline-block;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.educationDescription {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 18px 0 0;
+  padding-top: 16px;
+}
+
+.educationHighlights,
+.certificationsGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.educationHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.educationHighlights li {
+  border: 1px solid rgba(246, 242, 234, 0.12);
+  border-radius: 999px;
+  color: rgba(246, 242, 234, 0.78);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 7px 9px;
+}
+
+.certificationsArea {
+  display: grid;
+}
+
+.certificationsGrid {
+  display: grid;
+  gap: 8px 10px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.specialtyItem {
+.certificationCard {
   align-items: center;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  display: flex;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: grid;
   gap: 10px;
-  min-height: 52px;
+  grid-template-columns: minmax(0, 1fr) 34px;
   min-width: 0;
-  padding: 12px 14px;
+  padding: 10px 12px;
 }
 
-.specialtyItem span {
-  color: var(--text);
-  font-size: 0.84rem;
-  font-weight: 800;
+.certificationDate {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   line-height: 1.25;
+  text-transform: none;
+}
+
+.certificationContent {
+  display: grid;
+  gap: 5px;
+  justify-items: start;
+  min-width: 0;
+}
+
+.certificationContent h4 {
+  color: var(--text);
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  margin: 0;
+  min-width: 0;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.certificationContent p {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0;
+  max-width: 100%;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.certificationInstitution {
+  color: rgba(246, 242, 234, 0.58);
+}
+
+.certificateLink {
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(246, 242, 234, 0.14);
+  border-radius: 999px;
+  color: rgba(246, 242, 234, 0.62);
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  min-width: 34px;
+  padding: 0;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease, transform 180ms ease;
+  width: 34px;
+}
+
+.certificateLink:hover {
+  background: rgba(255, 98, 79, 0.08);
+  border-color: rgba(255, 98, 79, 0.38);
+  color: var(--coral);
+  transform: translateY(-1px);
+}
+
+.certificateLink:focus-visible {
+  outline: 2px solid rgba(255, 98, 79, 0.72);
+  outline-offset: 3px;
 }
 
 .experienceTimeline {
@@ -969,7 +1130,16 @@ main {
     font-size: clamp(2.4rem, 4.4vw, 3.8rem);
   }
 
-  .specialtyGrid {
+  .educationHeader {
+    grid-template-columns: 36px 1fr;
+  }
+
+  .educationIcon {
+    height: 36px;
+    width: 36px;
+  }
+
+  .certificationsGrid {
     grid-template-columns: 1fr;
   }
 }
@@ -1065,12 +1235,26 @@ main {
     letter-spacing: -0.035em;
   }
 
-  .specialtyGrid {
+  .educationCard {
+    padding: 18px;
+  }
+
+  .educationHighlights {
+    gap: 8px;
+  }
+
+  .certificationsGrid {
     grid-template-columns: 1fr;
   }
 
-  .specialtyItem {
-    min-height: 48px;
+  .certificationCard {
+    padding: 12px;
+  }
+
+  .certificateLink {
+    gap: 7px;
+    padding: 0 12px;
+    width: auto;
   }
 
   .experienceList {
