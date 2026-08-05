@@ -13,7 +13,7 @@ import {
   Phone,
   Server,
 } from "lucide-react";
-import { AboutSection } from "./AboutSection";
+import { AboutSection, EducationAndCertifications } from "./AboutSection";
 import { PortfolioAnimations } from "./PortfolioAnimations";
 import { ProjectCaseStudies } from "./ProjectCaseStudies";
 
@@ -72,8 +72,9 @@ export default function Home() {
           <div className="container navContainer">
             <a className="brand" href="#home">Gilnathan Reis</a>
             <div className="navLinks">
-              <a href="#sobre">Sobre</a>
               <a href="#projetos">Projetos</a>
+              <a href="#sobre">Sobre</a>
+              <a href="#formacao">Formação</a>
               <a href="#contato">Contato</a>
             </div>
           </div>
@@ -85,8 +86,7 @@ export default function Home() {
             <h1>Eu sou Gilnathan Reis</h1>
             <h2>Full Stack Developer</h2>
             <p className="heroSummary">
-              Desenvolvedor Full Stack especializado em construir sistemas escaláveis utilizando C#, .NET, React e Next.js.
-              Desenvolvo aplicações modernas com foco em arquitetura limpa, desempenho e excelente experiência do usuário.
+              Desenvolvo aplicações web, plataformas SaaS e APIs com foco em desempenho, escalabilidade e experiência do usuário.
             </p>
             <div className="heroActions">
               <a className="button primary" href="https://github.com/Gilnathan" target="_blank" rel="noreferrer">
@@ -129,9 +129,11 @@ export default function Home() {
         </div>
       </section>
 
+      <ProjectCaseStudies />
+
       <AboutSection />
 
-      <ProjectCaseStudies />
+      <EducationAndCertifications />
 
       <section className="section buildOptions" aria-labelledby="build-options-title">
         <p className="sectionKicker">Soluções</p>

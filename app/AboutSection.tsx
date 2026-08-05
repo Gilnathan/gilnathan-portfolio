@@ -13,10 +13,10 @@ const experiences = [
     company: "Agência 33",
     location: "Itabela • Bahia • Presencial",
     description:
-      "Atuo como Desenvolvedor Full Stack na Agência 33, desenvolvendo soluções digitais para empresas de diversos segmentos, incluindo sistemas web, plataformas SaaS, APIs, sites institucionais e landing pages.\n\nParticipo de todas as etapas do ciclo de desenvolvimento, desde o levantamento de requisitos e definição da arquitetura da aplicação até a implementação, testes, deploy e evolução contínua dos projetos. Utilizo tecnologias como C#, .NET, React, Next.js e SQL Server, sempre priorizando performance, escalabilidade, segurança e boas práticas de desenvolvimento.\n\nAlém da atuação como desenvolvedor, também colaboro na criação de interfaces (UI), identidade visual e materiais para campanhas digitais, contribuindo para que cada projeto entregue uma experiência moderna, intuitiva e alinhada aos objetivos de negócio dos clientes.",
+      "Desenvolvimento de sistemas web, plataformas SaaS, APIs, sites institucionais e landing pages. Atuação em arquitetura, implementação, testes, deploy e manutenção, além de colaboração em UI e identidade visual.",
     badge: "ATUAL",
     badgeType: "current",
-    stack: ["C#", ".NET", "React", "Next.js", "TypeScript", "JavaScript", "SQL Server", "REST API", "UI Design", "UX", "Figma", "Git", "GitHub"]
+    stack: ["C#", ".NET", "React", "Next.js", "TypeScript", "JavaScript", "SQL Server", "REST API", "UI Design", "Git", "GitHub"]
   },
   {
     period: "Fev 2021 — Atual",
@@ -24,7 +24,7 @@ const experiences = [
     company: "GRcode.dev",
     location: "Remoto",
     description:
-      "Fundador da GRcode.dev, empresa focada no desenvolvimento de sites institucionais, landing pages, sistemas web e plataformas SaaS.\n\nAtuo em todas as etapas do projeto, desde o levantamento de requisitos, arquitetura da aplicação, desenvolvimento Front-End e Back-End até a implantação e manutenção dos sistemas em produção.",
+      "Desenvolvimento de soluções web sob medida para empresas e profissionais, atuando desde o levantamento de requisitos até a publicação e manutenção das aplicações.",
     badge: "FREELANCER",
     badgeType: "freelancer",
     stack: ["C#", ".NET", "React", "Next.js", "SQL Server", "APIs REST", "Docker", "Git"]
@@ -35,7 +35,7 @@ const experiences = [
     company: "Off Store",
     location: "Itabela • Bahia",
     description:
-      "Responsável pela gestão operacional da loja, coordenação da equipe, controle de estoque, atendimento ao cliente e organização dos processos internos.\n\nTambém auxiliava nas demandas técnicas relacionadas à informática e tecnologia, contribuindo para melhoria dos processos internos.",
+      "Gestão operacional da loja, coordenação da equipe, controle de estoque, atendimento ao cliente e suporte técnico em informática.",
     stack: ["Gestão", "Liderança", "Organização", "Atendimento", "Suporte Técnico"]
   }
 ];
@@ -63,13 +63,14 @@ export function AboutSection() {
           <h2 className="aboutTitle">Construo software que resolve problemas reais.</h2>
           <div className="aboutText">
             <p>
-              Sou Desenvolvedor Full Stack especializado na criação de sistemas web, plataformas SaaS e APIs. Desenvolvo
-              soluções escaláveis utilizando C#, .NET, React, Next.js e SQL Server, sempre priorizando arquitetura,
-              desempenho, qualidade de código e uma excelente experiência para o usuário.
+              Gosto de compreender o problema antes de escrever código. Busco criar soluções organizadas, fáceis de
+              evoluir e alinhadas às necessidades de usuários e empresas.
+            </p>
+            <p>
+              Meu objetivo é transformar requisitos em produtos digitais funcionais, claros e sustentáveis, combinando
+              qualidade técnica, experiência do usuário e visão de produto.
             </p>
           </div>
-
-          <EducationAndCertifications shouldReduceMotion={shouldReduceMotion} />
         </motion.div>
 
         <ExperienceTimeline shouldReduceMotion={shouldReduceMotion} />
@@ -78,10 +79,13 @@ export function AboutSection() {
   );
 }
 
-function EducationAndCertifications({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
+export function EducationAndCertifications() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.section
       className="educationArea"
+      id="formacao"
       aria-labelledby="education-title"
       initial={shouldReduceMotion ? { opacity: 1 } : "hidden"}
       whileInView={shouldReduceMotion ? { opacity: 1 } : "visible"}
@@ -91,7 +95,7 @@ function EducationAndCertifications({ shouldReduceMotion }: { shouldReduceMotion
     >
       <div>
         <h3 className="sectionKicker" id="education-title">
-          Formação
+          FORMAÇÃO
         </h3>
         <article className="educationCard">
           <div className="educationHeader">
@@ -105,8 +109,8 @@ function EducationAndCertifications({ shouldReduceMotion }: { shouldReduceMotion
             </div>
           </div>
           <p className="educationDescription">
-            Graduação focada em desenvolvimento de software, arquitetura de sistemas, banco de dados, engenharia de
-            software e desenvolvimento de aplicações web.
+            Graduação focada em desenvolvimento de software, arquitetura de sistemas, banco de dados e engenharia de
+            software.
           </p>
           <ul className="educationHighlights" aria-label="Disciplinas em destaque">
             {educationHighlights.map((item) => (
@@ -116,9 +120,9 @@ function EducationAndCertifications({ shouldReduceMotion }: { shouldReduceMotion
         </article>
       </div>
 
-      <section className="certificationsArea" aria-labelledby="certifications-title">
+      <section className="certificationsArea" id="certificacoes" aria-labelledby="certifications-title">
         <h3 className="sectionKicker" id="certifications-title">
-          Certificações
+          CERTIFICAÇÕES
         </h3>
         <motion.ul className="certificationsGrid" layout={shouldReduceMotion ? false : true}>
           {certifications.map((certification) => (
