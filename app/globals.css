@@ -32,7 +32,7 @@ a {
 }
 
 main {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .container {
