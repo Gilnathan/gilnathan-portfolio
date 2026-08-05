@@ -175,6 +175,7 @@ export function EducationAndCertifications() {
                 </motion.li>
               ))}
             </motion.ul>
+            <p className="carouselHint">Deslize para ver mais</p>
           </section>
         </div>
       </motion.section>
