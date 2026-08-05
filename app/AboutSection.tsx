@@ -60,15 +60,12 @@ export function AboutSection() {
           transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="sectionKicker">Sobre mim</p>
-          <h2 className="aboutTitle">Desenvolvo software pensando no produto, não apenas no código.</h2>
+          <h2 className="aboutTitle">Construo software que resolve problemas reais.</h2>
           <div className="aboutText">
             <p>
-              Sou Desenvolvedor Full Stack e crio aplicações que resolvem problemas reais, atuando desde a arquitetura
-              do back-end até a construção de interfaces modernas.
-            </p>
-            <p>
-              Tenho experiência com C#, .NET, React, Next.js, SQL Server e APIs REST, sempre buscando unir qualidade
-              técnica, desempenho e valor para o negócio.
+              Sou Desenvolvedor Full Stack especializado na criação de sistemas web, plataformas SaaS e APIs. Desenvolvo
+              soluções escaláveis utilizando C#, .NET, React, Next.js e SQL Server, sempre priorizando arquitetura,
+              desempenho, qualidade de código e uma excelente experiência para o usuário.
             </p>
           </div>
 
