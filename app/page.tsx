@@ -10,7 +10,6 @@ import {
   Link2,
   Mail,
   Monitor,
-  Phone,
   Server,
 } from "lucide-react";
 import { AboutSection, EducationAndCertifications } from "./AboutSection";
@@ -170,9 +169,15 @@ export default function Home() {
             <p>Itabela, Bahia, Brasil</p>
             <div className="contactLinks">
               <a href="mailto:gilthanreis@gmail.com" aria-label="Enviar e-mail"><Mail size={16} aria-hidden="true" /> Email <ArrowUpRight size={15} aria-hidden="true" /></a>
-              <a href="tel:+5573991073850" aria-label="Ligar para Gilnathan Reis"><Phone size={16} aria-hidden="true" /> Telefone <ArrowUpRight size={15} aria-hidden="true" /></a>
               <a href="https://github.com/Gilnathan" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil no GitHub"><GitBranch size={16} aria-hidden="true" /> GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
               <a href="https://www.linkedin.com/in/gilnathan-reis-50ba67238/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil no LinkedIn"><Link2 size={16} aria-hidden="true" /> LinkedIn <ArrowUpRight size={15} aria-hidden="true" /></a>
+              <a href="https://wa.me/5573991073850" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20.52 3.48A11.88 11.88 0 0 0 12 .5C6.6.5 1.9 4.8 1.3 10.1c-.2 1.8.1 3.6.9 5.1L.5 23.5l8.5-2.2c1.4.4 2.8.6 4.3.6 5.4 0 10.2-4.3 10.6-9.8.2-1.9-.1-3.7-1.3-5.1z" fill="currentColor" opacity="0.08"/>
+                  <path d="M17.5 14.1c-.3-.2-1.7-.8-2-.9-.3-.1-.6-.2-.9.2-.3.3-1 0-1.6-.7-.6-.7-1.1-1.5-.9-1.9.2-.3 0-.6-.1-.9-.1-.2-1-2.4-1.4-3.2-.4-.8-.8-.7-1-.7-.2 0-.4 0-.6 0-.2 0-.5.2-.8.6-.3.4-1.1 1.3-1.1 3.1 0 1.9 1.1 3.7 1.2 3.9.1.2 2.1 3.2 5.2 4.4 3.1 1.2 3.1.8 3.7.8.6 0 2.1-.8 2.4-1.6.3-.8.3-1.4.2-1.6-.1-.2-.3-.3-.6-.5z" fill="currentColor"/>
+                </svg>
+                WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
             </div>
             <p>Disponível para colaboração remota.</p>
           </div>
@@ -181,7 +186,7 @@ export default function Home() {
       <footer className="footer">
         <div className="container footerContainer">
           <p>© {currentYear} Gilnathan Reis.</p>
-          <p>gilthanreis@gmail.com · (73) 9 9107-3850</p>
+          <p>gilthanreis@gmail.com · WhatsApp</p>
           <p>Desenvolvido com Next.js, React e TypeScript.</p>
         </div>
       </footer>
